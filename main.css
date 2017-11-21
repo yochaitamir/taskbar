@@ -28,9 +28,22 @@ body {
   background-repeat: no-repeat;
   float: left;
 }
+.note:hover {
+  background-image: url("images/notebg.png");
+  height: 250px;
+  width: 180px;
+  background-repeat: no-repeat;
+  float: left;
+}
+.note:hover button {
+  display: block;
+}
 .required:before {
   content: "required";
 }
 .butt {
   width: 40px;
+}
+button.butt {
+  display: none;
 }
