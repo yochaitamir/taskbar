@@ -99,9 +99,9 @@
          missionArray = JSON.parse(localStorage.getItem("missionArray", missionArray));
          localstoring(missionArray);
          console.log(missionArray)
-         for (let i = 0; i < missionArray.length ; i++) {
+         for (let i = 0; i < missionArray.length; i++) {
              //if (missionArray[i]) 
-                 d = new createnote(missionArray[i].mis, missionArray[i].date, missionArray[i].hour, missionArray[i].index);
+             d = new createnote(missionArray[i].mis, missionArray[i].date, missionArray[i].hour, missionArray[i].index);
              //
          }
 
@@ -118,7 +118,8 @@
          var note = document.createElement('div');
          note.innerHTML = '<br>' + this.mission1 + '<br>' + this.date1 + '<br>' + this.hour1;
          note.className = "note";
-
+         
+         
          var noteplace = document.getElementById("notes");
 
          noteplace.appendChild(note);
@@ -163,10 +164,10 @@
 
              } else {
                  console.log(i);
-                  missionArray.splice(i);
+                 missionArray.splice(i);
+                 localstoring(missionArray)
              }
-             console.log(missionArray)
-             //localstoring(missionArray)
+             
          }
 
 
@@ -176,12 +177,23 @@
 
      function erase() {
          deleteById(this.dataset.id);
-
+         
          note = this.parentElement
-         this.parentElement.parentElement.removeChild(note)
+         note.className = "fade";
+         
+         console.log(note)
+setTimeout(function(){
+        note.parentElement.removeChild(note);
+    }, 2000);
+    
+        //note.parentElement.removeChild(note);
+
+
+         
+
      }
-     //this.parentElement.className = "fade";
-     //localstoring(missionArray)
+
+     localstoring(missionArray)
 
      /*function eraseNote(missionArray) {
           var a = document.getElementsByClassName("butt");
