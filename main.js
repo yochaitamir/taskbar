@@ -118,8 +118,8 @@
          var note = document.createElement('div');
          note.innerHTML = '<br>' + this.mission1 + '<br>' + this.date1 + '<br>' + this.hour1;
          note.className = "note";
-         
-         
+
+
          var noteplace = document.getElementById("notes");
 
          noteplace.appendChild(note);
@@ -133,12 +133,58 @@
 
 
          note.appendChild(buto);
+         var updateButton = document.createElement("button");
+         updateButton.innerHTML = "update";
+         updateButton.dataset.id = this.index;
+         updateButton.className = "button";
+         note.appendChild(updateButton);
+
+         console.log(buto.dataset.id)
+
+
+         note.appendChild(buto);
 
 
          eraseNote(missionArray);
-
+         update(missionArray);
      }
 
+     function update(missionArray) {
+         a = document.querySelectorAll(".button");
+         for (var i = 0; i < a.length; i++) {
+             a[i].addEventListener('click', envokeupdate)
+             a[i].addEventListener('click', erase)
+         }
+     }
+
+     function envokeupdate() {
+         console.log(this)
+         prepareForUpdate(this.dataset.id)
+         deleteById(this.dataset.id)
+     }
+
+     function prepareForUpdate(id) {
+
+         var mission1 = document.getElementById('textzone');
+         var addElement = document.getElementById("addmission")
+         var date1 = document.getElementById("date");
+         var hour1 = document.getElementById("hour");
+         console.log(id);
+         let missionArray = JSON.parse(localStorage.getItem("missionArray"));
+         for (var i = 0; i < missionArray.length; i++) {
+             //console.log(missionArray[i])
+             if (missionArray[i] !== null && typeof missionArray[i] === 'object') {
+                 if (missionArray[i].index == id) {     mission1.value = missionArray[i].mis
+                     date1.value = missionArray[i].date
+                     hour1.value = missionArray[i].hour
+                     missionArray.splice(i, 1)
+                     localstoring(missionArray)
+                      console.log(missionArray);                             
+                 }
+
+             }
+         }
+     }
 
      function eraseNote(missionArray, y) {
          a = document.querySelectorAll(".butt");
@@ -163,11 +209,11 @@
                  }
 
              } else {
-                 console.log(i);
+                 
                  missionArray.splice(i);
                  localstoring(missionArray)
              }
-             
+
          }
 
 
@@ -177,9 +223,26 @@
 
      function erase() {
          deleteById(this.dataset.id);
-         
+
          note = this.parentElement
          note.className = "fade";
+
+         console.log(note)
+         setTimeout(function () {
+             note.parentElement.removeChild(note);
+        }, 2000);
+
+
+
+
+
+
+     }
+     /*function erase1(x) {
+         //deleteById(this.dataset.id);
+         
+         note = x.parentElement
+         note.parentElement.className = "fade";
          
          console.log(note)
 setTimeout(function(){
@@ -191,9 +254,9 @@ setTimeout(function(){
 
          
 
-     }
+     }*/
 
-     localstoring(missionArray)
+     //localstoring(missionArray)
 
      /*function eraseNote(missionArray) {
           var a = document.getElementsByClassName("butt");
