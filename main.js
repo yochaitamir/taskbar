@@ -1,7 +1,9 @@
  function activate() {
-     var missionArray = JSON.parse(localStorage.getItem("missionArray", missionArray));
-     localstoring(missionArray);
      console.log(missionArray);
+     var missionArray = JSON.parse(localStorage.getItem("missionArray", missionArray));
+     console.log(missionArray);
+     //localstoring(missionArray);
+
      if (missionArray == null) {
          active()
      } else {
@@ -79,8 +81,9 @@
              hour: hour1.value,
              index: missionArray.length
          }
-         missionArray.push(listObj);
          console.log(missionArray);
+         missionArray.push(listObj);
+         
          f = new createnote(missionArray[g].mis, missionArray[g].date, missionArray[g].hour, missionArray[g].index)
          g++
 
@@ -170,16 +173,19 @@
          var date1 = document.getElementById("date");
          var hour1 = document.getElementById("hour");
          console.log(id);
-         let missionArray = JSON.parse(localStorage.getItem("missionArray"));
+         
          for (var i = 0; i < missionArray.length; i++) {
              //console.log(missionArray[i])
              if (missionArray[i] !== null && typeof missionArray[i] === 'object') {
-                 if (missionArray[i].index == id) {     mission1.value = missionArray[i].mis
+                 if (missionArray[i].index == id) {
+
+                     mission1.value = missionArray[i].mis
                      date1.value = missionArray[i].date
                      hour1.value = missionArray[i].hour
                      missionArray.splice(i, 1)
                      localstoring(missionArray)
-                      console.log(missionArray);                             
+                     console.log(missionArray);
+                     
                  }
 
              }
@@ -209,9 +215,9 @@
                  }
 
              } else {
-                 
-                 missionArray.splice(i);
-                 localstoring(missionArray)
+
+                 //missionArray.splice(i);
+                 //localstoring(missionArray)
              }
 
          }
@@ -230,7 +236,7 @@
          console.log(note)
          setTimeout(function () {
              note.parentElement.removeChild(note);
-        }, 2000);
+         }, 2000);
 
 
 
@@ -238,23 +244,7 @@
 
 
      }
-     /*function erase1(x) {
-         //deleteById(this.dataset.id);
-         
-         note = x.parentElement
-         note.parentElement.className = "fade";
-         
-         console.log(note)
-setTimeout(function(){
-        note.parentElement.removeChild(note);
-    }, 2000);
-    
-        //note.parentElement.removeChild(note);
 
-
-         
-
-     }*/
 
      //localstoring(missionArray)
 
