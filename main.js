@@ -43,7 +43,7 @@
          } else {
              document.getElementById("textmissing").className = "";
          }
-         if (/^([1-9]|0[1-9]|[12][0-9]|3[01])[- /.]([1-9]|0[1-9]|1[012])[- /.](19|20)\d\d$/.test("19.7.2050")) {
+         if (/^([1-9]|0[1-9]|[12][0-9]|3[01])[- /.]([1-9]|0[1-9]|1[012])[- /.](19|20)\d\d$/.test(date1.value)) {
              document.getElementById("wrongdate").className = "";
 
              console.log("true")
@@ -51,7 +51,7 @@
              document.getElementById("wrongdate").className = "required";
              console.log("false");
          }
-         if (/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test("12:30")) {
+         if (/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(hour1.value)) {
              document.getElementById("wronghour").className = "";
              console.log("true")
              noteList(mission1, date1, hour1)
