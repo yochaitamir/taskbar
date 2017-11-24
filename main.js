@@ -129,10 +129,12 @@
          var noteplace = document.getElementById("notes");
 
          noteplace.appendChild(note);
-         var buto = document.createElement("i");
+         var buto = document.createElement("a");
+        buto.innerHTML = "<i class='fa fa-trash' ></i>"
+        buto.setAttribute('href',"#");
          //buto.innerHTML = "done";
          buto.dataset.id = this.index;
-         buto.className = "fa fa-trash";
+         //buto.className = "fa fa-trash";
          buto.id="trash";
 
 
@@ -140,10 +142,12 @@
 
 
          note.appendChild(buto);
-         var updateButton = document.createElement("i");
-         //updateButton.innerHTML = "update";
+         var updateButton = document.createElement("a");
+         updateButton.innerHTML = "<i class='fa fa-pencil' ></i>";
+         updateButton.style.textDecoration = 'none';
          updateButton.dataset.id = this.index;
-         updateButton.className = "fa fa-pencil";
+         updateButton.setAttribute('href',"#");
+         //updateButton.className = "fa fa-pencil";
          updateButton.id="j"
          note.appendChild(updateButton);
 
