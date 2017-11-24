@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
-*{font-family: 'Open Sans', sans-serif;
-font-family: 'Pacifico', cursive;}
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
-font-family: 'Pacifico', cursive;
+    font-family: 'Pacifico', cursive;
 
     background-image: url("images/tile.jpg");
-   
+
 }
 
 .container {
@@ -31,8 +34,8 @@ font-family: 'Pacifico', cursive;
 }
 
 
-.note { 
-    
+.note {
+
     position: relative;
     background-image: url("images/notebg.png");
     height: 250px;
@@ -70,6 +73,25 @@ font-family: 'Pacifico', cursive;
         opacity: 0;
     }
 }
+#trash{display:none;}
+.note:hover {
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    #trash {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        display: block;
+        //box-shadow: -5px -5px 5px #888888;
+    }
+}
+
+  #j {
+   display: none;
+}
 
 .note:hover {
     background-image: url("images/notebg.png");
@@ -77,26 +99,12 @@ font-family: 'Pacifico', cursive;
     width: 180px;
     background-repeat: no-repeat;
     float: left;
-    .butt {
-        position:absolute;
-            bottom: 10px;
+    #j {
+        position: absolute;
+        bottom: 45px;
         right: 0;
-        display: block;
-        box-shadow: -5px -5px 5px #888888;
-    }
-}
-.note:hover {
-    background-image: url("images/notebg.png");
-    height: 250px;
-    width: 180px;
-    background-repeat: no-repeat;
-    float: left;
-    .button {
-        position:absolute;
-            bottom: 45px;
-        right: 0;
-        display: block;
-        box-shadow: -5px -5px 5px #888888;
+        display: block; 
+        //box-shadow: -5px -5px 5px #888888;
     }
 }
 

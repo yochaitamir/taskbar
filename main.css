@@ -58,6 +58,9 @@ body {
     opacity: 0;
   }
 }
+#trash {
+  display: none;
+}
 .note:hover {
   background-image: url("images/notebg.png");
   height: 250px;
@@ -65,12 +68,14 @@ body {
   background-repeat: no-repeat;
   float: left;
 }
-.note:hover .butt {
+.note:hover #trash {
   position: absolute;
   bottom: 10px;
   right: 0;
   display: block;
-  box-shadow: -5px -5px 5px #888888;
+}
+#j {
+  display: none;
 }
 .note:hover {
   background-image: url("images/notebg.png");
@@ -79,12 +84,11 @@ body {
   background-repeat: no-repeat;
   float: left;
 }
-.note:hover .button {
+.note:hover #j {
   position: absolute;
   bottom: 45px;
   right: 0;
   display: block;
-  box-shadow: -5px -5px 5px #888888;
 }
 .required:before {
   content: "required";

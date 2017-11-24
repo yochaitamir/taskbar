@@ -39,9 +39,10 @@
          var hour1 = document.getElementById("hour");
          if (!mission1.value) {
              document.getElementById("textmissing").className = "required";
-             return
+              return active();
          } else {
              document.getElementById("textmissing").className = "";
+            
          }
          if (/^([1-9]|0[1-9]|[12][0-9]|3[01])[- /.]([1-9]|0[1-9]|1[012])[- /.](19|20)\d\d$/.test(date1.value)) {
              document.getElementById("wrongdate").className = "";
@@ -50,6 +51,8 @@
          } else {
              document.getElementById("wrongdate").className = "required";
              console.log("false");
+             return active();
+             
          }
          if (/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(hour1.value)) {
              document.getElementById("wronghour").className = "";
@@ -59,7 +62,7 @@
          } else {
              document.getElementById("wronghour").className = "required";
              console.log();
-             return
+             return active();
          }
 
      }
@@ -126,20 +129,22 @@
          var noteplace = document.getElementById("notes");
 
          noteplace.appendChild(note);
-         var buto = document.createElement("button");
-         buto.innerHTML = "done";
+         var buto = document.createElement("i");
+         //buto.innerHTML = "done";
          buto.dataset.id = this.index;
-         buto.className = "butt";
+         buto.className = "fa fa-trash";
+         buto.id="trash";
 
 
          console.log(buto.dataset.id)
 
 
          note.appendChild(buto);
-         var updateButton = document.createElement("button");
-         updateButton.innerHTML = "update";
+         var updateButton = document.createElement("i");
+         //updateButton.innerHTML = "update";
          updateButton.dataset.id = this.index;
-         updateButton.className = "button";
+         updateButton.className = "fa fa-pencil";
+         updateButton.id="j"
          note.appendChild(updateButton);
 
          console.log(buto.dataset.id)
@@ -153,7 +158,8 @@
      }
 
      function update(missionArray) {
-         a = document.querySelectorAll(".button");
+         a = document.querySelectorAll("#j");
+         console.log(a)
          for (var i = 0; i < a.length; i++) {
              a[i].addEventListener('click', envokeupdate)
              a[i].addEventListener('click', erase)
@@ -193,7 +199,7 @@
      }
 
      function eraseNote(missionArray, y) {
-         a = document.querySelectorAll(".butt");
+         a = document.querySelectorAll("#trash");
          for (var i = 0; i < a.length; i++) {
              a[i].addEventListener('click', erase)
          }
