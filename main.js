@@ -105,9 +105,9 @@
          missionArray = JSON.parse(localStorage.getItem("missionArray", missionArray));
          localstoring(missionArray);
          console.log(missionArray)
-         for (let i = 0; i < missionArray.length; i++) {
+         for (let k = 0; k < missionArray.length; k++) {
              //if (missionArray[i]) 
-             d = new createnote(missionArray[i].mis, missionArray[i].date, missionArray[i].hour, missionArray[i].index);
+             d = new createnote(missionArray[k].mis, missionArray[k].date, missionArray[k].hour, missionArray[k].index);
              //
          }
 
@@ -129,26 +129,27 @@
          var noteplace = document.getElementById("notes");
 
          noteplace.appendChild(note);
-         var buto = document.createElement("a");
+         var buto = document.createElement("span");
         buto.innerHTML = "<i class='fa fa-trash' ></i>"
-        buto.setAttribute('href',"#");
+        //buto.setAttribute('href',"#");
          //buto.innerHTML = "done";
          buto.dataset.id = this.index;
          //buto.className = "fa fa-trash";
          buto.id="trash";
-
+        buto.style="cursor:pointer"
 
          console.log(buto.dataset.id)
 
 
          note.appendChild(buto);
-         var updateButton = document.createElement("a");
+         var updateButton = document.createElement("span");
          updateButton.innerHTML = "<i class='fa fa-pencil' ></i>";
          updateButton.style.textDecoration = 'none';
          updateButton.dataset.id = this.index;
          updateButton.setAttribute('href',"#");
-         //updateButton.className = "fa fa-pencil";
-         updateButton.id="j"
+         
+         updateButton.id="j";
+         updateButton.style="cursor:pointer";
          note.appendChild(updateButton);
 
          console.log(buto.dataset.id)
