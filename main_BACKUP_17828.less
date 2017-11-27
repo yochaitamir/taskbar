@@ -1,0 +1,261 @@
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
+
+    background-image: url("images/tile.jpg");
+
+}
+
+.container {
+
+    width: 100%;
+}
+
+.title {
+    display: block;
+    margin: 0 auto;
+}
+
+.formbg {
+    height: 300px;
+    background-image: url("images/formbg.jpg");
+}
+
+#notes {
+    height: 300px;
+    width: 100%;
+    border: solid 2px black;
+}
+
+
+.note {
+
+    position: relative;
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    animation: fadein 2s; //button{display:none;} 
+}
+
+.fade {
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    animation: fadeout 2s;
+
+
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+#trash{display:none;
+}
+#trash:hover{display:none;
+}
+.note:hover {
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    #trash {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        display: block;
+        curser:pointer;
+        //box-shadow: -5px -5px 5px #888888;
+    }
+}
+
+  #j {
+   display: none;
+}
+
+.note:hover {
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    #j {opacity: 0.5;
+        position: absolute;
+        bottom: 45px;
+        right: 0;
+        display: block; 
+        //box-shadow: -5px -5px 5px #888888;
+    }
+}
+
+.required:before {
+    content: "required"
+}
+
+.butt {
+    width: 40px;
+}
+
+button.butt {
+    display: none;
+}
+
+button.button {
+    display: none;
+}
+=======
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
+
+    background-image: url("images/tile.jpg");
+
+}
+
+.container {
+
+    width: 100%;
+}
+
+.title {
+    display: block;
+    margin: 0 auto;
+}
+
+.formbg {
+    height: 300px;
+    background-image: url("images/formbg.jpg");
+}
+
+#notes {
+    height: 300px;
+    width: 100%;
+    border: solid 2px black;
+}
+
+
+.note {
+
+    position: relative;
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    animation: fadein 2s; //button{display:none;} 
+}
+
+.fade {
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    animation: fadeout 2s;
+
+
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+#trash{display:none;
+}
+#trash:hover{display:none;
+}
+.note:hover {
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    #trash {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        display: block;
+        curser:pointer;
+        //box-shadow: -5px -5px 5px #888888;
+    }
+}
+
+  #j {
+   display: none;
+}
+
+.note:hover {
+    background-image: url("images/notebg.png");
+    height: 250px;
+    width: 180px;
+    background-repeat: no-repeat;
+    float: left;
+    #j {opacity: 0.5;
+        position: absolute;
+        bottom: 45px;
+        right: 0;
+        display: block; 
+        //box-shadow: -5px -5px 5px #888888;
+    }
+}
+
+.required:before {
+    content: "required"
+}
+
+.butt {
+    width: 40px;
+}
+
+button.butt {
+    display: none;
+}
+
+button.button {
+    display: none;
+}
+>>>>>>> 6c2f104cf8f0ba8e3728bd13dd0a0efaf8b57492
