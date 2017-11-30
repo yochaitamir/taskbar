@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+
+<body>
+    <div class=container>
+        <img class="title" src="images/title.png">
+        <div class="formbg">
+            <label>mission</label><br>
+            <textarea   placeholder="mission to do" id="textzone" rows="5" cols="30"></textarea><br>
+            <div id=textmissing ></div>
+            <label>date</label><input  id="date" placeholder="dd/mm/yyyy"><br>
+            <div id=wrongdate ></div>
+            <label>hour</label><input  id=hour placeholder="hh:mm"><br>
+            <div id=wronghour></div>
+            <button id=addmission>add to list</button>
+        </div>
+        <div id=notes></div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
